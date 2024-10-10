@@ -87,4 +87,6 @@ example/ios/build
 example/ios/Podfile.lock
 
 yarn.lock
-.yarn/*
+.yarn/cache
+.yarn/plugins
+.yarn/releases
