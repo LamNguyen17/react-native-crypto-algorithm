@@ -2,7 +2,7 @@ import { NativeModules } from 'react-native';
 
 const CryptoAlgorithmNative = NativeModules.CryptoAlgorithm;
 
-export default class Encryption {
+export default class Crypto {
   static hashSHA256 = (value: string) => {
     return CryptoAlgorithmNative.hashSHA256(value);
   };
