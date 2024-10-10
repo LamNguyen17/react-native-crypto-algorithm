@@ -1,6 +1,6 @@
 {
   "name": "react-native-crypto-algorithm",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Native Module using Kotlin & Swift for React-Native",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
@@ -48,8 +48,12 @@
   },
   "keywords": [
     "react-native",
-    "ios",
-    "android"
+    "ios-swift",
+    "android-kotlin",
+    "rxswift",
+    "flow-coroutines",
+    "kotlin-coroutines",
+    "cryptoswift"
   ],
   "repository": {
     "type": "git",
