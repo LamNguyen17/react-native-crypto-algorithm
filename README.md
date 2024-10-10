@@ -1,6 +1,6 @@
 # react-native-crypto-algorithm
 
-[![](https://img.shields.io/badge/yarn-v1.0.0-blue)](https://www.npmjs.com/package/react-native-encryption-algorithm)
+[![](https://img.shields.io/badge/yarn-v1.0.1-blue)](https://www.npmjs.com/package/react-native-encryption-algorithm)
 [![](https://img.shields.io/badge/native_language-Kotlin_&_Swift-green)](https://www.npmjs.com/package/react-native-encryption-algorithm)
 [![](https://img.shields.io/badge/size-72.7_kB-red)](https://www.npmjs.com/package/react-native-encryption-algorithm)
 [![](https://img.shields.io/badge/license-MIT-8A2BE2)](https://github.com/LamNguyen17/react-native-encryption-algorithm/blob/master/LICENSE)
@@ -8,11 +8,11 @@
 
 ## Installation
 ```sh
-npm install react-native-encryption-algorithm
+npm install react-native-crypto-algorithm
 ```
 or
 ```sh
-yarn add react-native-encryption-algorithm
+yarn add react-native-crypto-algorithm
 ```
 
 ### Installation (iOS)
@@ -26,7 +26,7 @@ pod install
 
 ##### Using React Native Link (React Native 0.59 and lower)
 
-Run `react-native link react-native-encryption-algorithm` after which you should be able to use this library on iOS.
+Run `react-native link react-native-crypto-algorithm` after which you should be able to use this library on iOS.
 
 ### Installation (Android)
 
@@ -40,8 +40,8 @@ Run `react-native link react-native-encryption-algorithm` after which you should
 
 ```gradle
 ...
-include ':react-native-encryption-algorithm'
-project(':react-native-encryption-algorithm').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-encryption-algorithm/android')
+include ':react-native-crypto-algorithm'
+project(':react-native-crypto-algorithm').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-crypto-algorithm/android')
 ```
 
 -   In `android/app/build.gradle`
@@ -50,19 +50,19 @@ project(':react-native-encryption-algorithm').projectDir = new File(rootProject.
 ...
 dependencies {
     ...
-    compile project(':react-native-encryption-algorithm')
+    compile project(':react-native-crypto-algorithm')
 }
 ```
 -   register module (in MainApplication.kt)
 
 ```kt
 ......
-import com.encryptionalgorithm.EncryptionAlgorithmPackage;
+import com.cryptoalgorithm.CryptoAlgorithmPackage;
 ......
 
 override fun getPackages(): List<ReactPackage> =
   PackageList(this).packages.apply {
-    add(EncryptionAlgorithmPackage());
+    add(CryptoAlgorithmPackage());
   }
 ```
 
@@ -75,22 +75,22 @@ override fun getPackages(): List<ReactPackage> =
 - 🍁 `encryptAES(value: string, secretKey: string, ivKey?: string)`
 - 🍁 `decryptAES(value: string, secretKey: string, ivKey?: string)`
 ```js
-import Encryption from 'react-native-encryption-algorithm';
+import Crypto from 'react-native-crypto-algorithm';
 
 // Encrypt
-let encryptData = await Encryption.encryptAES('my message', 'my private key', 'my iv key(optional maximum 16 characters)');
+let encryptData = await Crypto.encryptAES('my message', 'my private key', 'my iv key(optional maximum 16 characters)');
 
 // Decrypt
-let decryptData = await Encryption.decryptAES(encryptData, 'my private key', 'my iv key(optional maximum 16 characters)');
+let decryptData = await Crypto.decryptAES(encryptData, 'my private key', 'my iv key(optional maximum 16 characters)');
 ```
 
 #### 🚀 SHA256
 - 🍁 `hashSHA256(value: string)`
 ```js
-import Encryption from 'react-native-encryption-algorithm';
+import Crypto from 'react-native-crypto-algorithm';
 
 // Hash SHA256
-let hashData = await Encryption.hashSHA256('my hash data');
+let hashData = await Crypto.hashSHA256('my hash data');
 ```
 
 #### 🚀 RSA
@@ -98,16 +98,16 @@ let hashData = await Encryption.hashSHA256('my hash data');
 - 🍁 `encryptRSA(value: string, publicKey: string)`
 - 🍁 `decryptRSA(value: string, privateKey: string)`
 ```js
-import Encryption from 'react-native-encryption-algorithm';
+import Crypto from 'react-native-crypto-algorithm';
 
 // Generate RSA Key Pair
-let keyPair = await Encryption.genRSAKeyPair();
+let keyPair = await Crypto.genRSAKeyPair();
 
 // Encrypt RSA
-let encryptData = await Encryption.encryptRSA('my message', keyPair.publicKey);
+let encryptData = await Crypto.encryptRSA('my message', keyPair.publicKey);
 
 // Decrypt RSA
-let decryptData = await Encryption.decryptRSA(encryptData, keyPair.privateKey);
+let decryptData = await Crypto.decryptRSA(encryptData, keyPair.privateKey);
 ```
 
 #### 🚀 HMAC / HMAC_AES
@@ -116,19 +116,19 @@ let decryptData = await Encryption.decryptRSA(encryptData, keyPair.privateKey);
 - 🍁 `decryptHmacAes(value: string, privateKey: string) -> use only for HMAC_AES`
 - 🍁 `verifyHmac(value: string, privateKey: string) -> use only for HMAC`
 ```js
-import Encryption from 'react-native-encryption-algorithm';
+import Crypto from 'react-native-crypto-algorithm';
 
 // Generate HMAC & HMAC_AES
-let genHmacSecretKey = await Encryption.genHmacSecretKey();
+let genHmacSecretKey = await Crypto.genHmacSecretKey();
 
 // Encrypt HMAC_AES
-let encryptData = await Encryption.encryptHmacAes('my message', genHmacSecretKey);
+let encryptData = await Crypto.encryptHmacAes('my message', genHmacSecretKey);
 
 // Decrypt HMAC_AES
-let decryptData = await Encryption.decryptHmacAes(encryptData, genHmacSecretKey);
+let decryptData = await Crypto.decryptHmacAes(encryptData, genHmacSecretKey);
 
 // VerifyHmac HMAC
-let verifyHmacData: boolean = await Encryption.verifyHmac('my message', genHmacSecretKey);
+let verifyHmacData: boolean = await Crypto.verifyHmac('my message', genHmacSecretKey);
 ```
 
 ---

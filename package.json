@@ -1,6 +1,6 @@
 {
   "name": "react-native-crypto-algorithm",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Native Module using Kotlin & Swift for React-Native",
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
