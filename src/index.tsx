@@ -1,22 +1,45 @@
-import { NativeModules, Platform } from 'react-native';
+import { NativeModules } from 'react-native';
 
-const LINKING_ERROR =
-  `The package 'react-native-crypto-algorithm' doesn't seem to be linked. Make sure: \n\n` +
-  Platform.select({ ios: "- You have run 'pod install'\n", default: '' }) +
-  '- You rebuilt the app after installing the package\n' +
-  '- You are not using Expo Go\n';
+const CryptoAlgorithmNative = NativeModules.CryptoAlgorithm;
 
-const CryptoAlgorithm = NativeModules.CryptoAlgorithm
-  ? NativeModules.CryptoAlgorithm
-  : new Proxy(
-      {},
-      {
-        get() {
-          throw new Error(LINKING_ERROR);
-        },
-      }
-    );
+export default class Encryption {
+  static hashSHA256 = (value: string) => {
+    return CryptoAlgorithmNative.hashSHA256(value);
+  };
 
-export function multiply(a: number, b: number): Promise<number> {
-  return CryptoAlgorithm.multiply(a, b);
+  static encryptAES = (value: string, secretKey: string, ivKey?: string) => {
+    return CryptoAlgorithmNative.encryptAES(value, secretKey, ivKey);
+  };
+
+  static decryptAES = (value: string, secretKey: string, ivKey?: string) => {
+    return CryptoAlgorithmNative.decryptAES(value, secretKey, ivKey);
+  };
+
+  static genRSAKeyPair = () => {
+    return CryptoAlgorithmNative.genRSAKeyPair();
+  };
+
+  static encryptRSA = (value: string, publicKey: string) => {
+    return CryptoAlgorithmNative.encryptRSA(value, publicKey);
+  };
+
+  static decryptRSA = (value: any, privateKey: string) => {
+    return CryptoAlgorithmNative.decryptRSA(value, privateKey);
+  };
+
+  static genHmacSecretKey = () => {
+    return CryptoAlgorithmNative.genSecretKey('Hmac');
+  };
+
+  static encryptHmacAes = (value: string, privateKey: string)=> {
+    return CryptoAlgorithmNative.encryptHmacAes(value, privateKey);
+  };
+
+  static decryptHmacAes = (value: any, privateKey: string) => {
+    return CryptoAlgorithmNative.decryptHmacAes(value, privateKey);
+  };
+
+  static verifyHmac = (value: string, privateKey: string) => {
+    return CryptoAlgorithmNative.verifyHmac(value, privateKey);
+  };
 }

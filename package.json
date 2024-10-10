@@ -36,6 +36,8 @@
     "!**/.*"
   ],
   "scripts": {
+    "npm:publish": "npm publish --access public",
+    "npm:remove:version": "npm unpublish react-native-crypto-algorithm@version",
     "example": "yarn workspace react-native-crypto-algorithm-example",
     "test": "jest",
     "typecheck": "tsc",
