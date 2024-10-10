@@ -1,9 +1,9 @@
 # react-native-crypto-algorithm
 
-[![](https://img.shields.io/badge/yarn-v1.0.1-blue)](https://www.npmjs.com/package/react-native-encryption-algorithm)
-[![](https://img.shields.io/badge/native_language-Kotlin_&_Swift-green)](https://www.npmjs.com/package/react-native-encryption-algorithm)
-[![](https://img.shields.io/badge/size-72.7_kB-red)](https://www.npmjs.com/package/react-native-encryption-algorithm)
-[![](https://img.shields.io/badge/license-MIT-8A2BE2)](https://github.com/LamNguyen17/react-native-encryption-algorithm/blob/master/LICENSE)
+[![](https://img.shields.io/badge/yarn-v1.0.2-blue)](https://www.npmjs.com/package/react-native-crypto-algorithm)
+[![](https://img.shields.io/badge/native_language-Kotlin_&_Swift-green)](https://www.npmjs.com/package/react-native-crypto-algorithm)
+[![](https://img.shields.io/badge/size-72.7_kB-red)](https://www.npmjs.com/package/react-native-crypto-algorithm)
+[![](https://img.shields.io/badge/license-MIT-8A2BE2)](https://github.com/LamNguyen17/react-native-crypto-algorithm/blob/master/LICENSE)
 [![](https://img.shields.io/badge/author-Forest_Nguyen-f59642)](https://github.com/LamNguyen17)
 
 ## Installation
