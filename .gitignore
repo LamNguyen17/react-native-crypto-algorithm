@@ -88,5 +88,3 @@ example/ios/Podfile.lock
 
 yarn.lock
 .yarn/cache
-.yarn/plugins
-.yarn/releases

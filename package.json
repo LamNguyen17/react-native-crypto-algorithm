@@ -36,6 +36,7 @@
     "!**/.*"
   ],
   "scripts": {
+    "start": "node index.js",
     "npm:publish": "npm publish --access public",
     "npm:remove:version": "npm unpublish react-native-crypto-algorithm@version",
     "example": "yarn workspace react-native-crypto-algorithm-example",
