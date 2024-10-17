@@ -86,5 +86,4 @@ example/ios/.xcode.env
 example/ios/build
 example/ios/Podfile.lock
 
-yarn.lock
 .yarn/cache
