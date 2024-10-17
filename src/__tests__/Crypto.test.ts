@@ -127,4 +127,3 @@ describe('Crypto', () => {
     expect(result).toBe(mockVerifiedHmac);
   });
 });
-

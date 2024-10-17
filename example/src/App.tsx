@@ -27,7 +27,7 @@ export default function App() {
     setKeyHmac(key);
     await getCryptoHmacAes(key);
     await getCryptoHmac(key);
-  }
+  };
 
   const getCryptoHmacAes = async (secretKey: string) => {
     const encryptData = await Crypto.encryptHmacAes('Hello123', secretKey);
@@ -36,12 +36,12 @@ export default function App() {
     setDecryptHmac(decryptData);
     console.log('getEncryptionHmacAes:', secretKey, ' - ', encryptData, ' - ', decryptData);
 
-  }
+  };
 
   const getCryptoHmac = async (secretKey: string) => {
     const verify = await Crypto.verifyHmac('Hello123', secretKey);
     setVerifyHmac(`${verify}`);
-  }
+  };
 
   const getCryptoRSA = async () => {
     const keyPair = await Crypto.genRSAKeyPair();
