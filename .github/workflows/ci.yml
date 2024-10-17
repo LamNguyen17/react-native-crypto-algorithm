@@ -20,6 +20,11 @@ jobs:
 #      - name: Setup
 #        uses: ./.github/actions/setup
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version-file: .nvmrc
+
       - name: Install Yarn
         run: |
           curl -o- -L https://yarnpkg.com/install.sh | bash
