@@ -38,7 +38,7 @@ jobs:
           fi
 
       - name: Install dependencies
-        run: yarn install --immutable
+        run: yarn install
 
       - name: Run tests
         run: yarn test
