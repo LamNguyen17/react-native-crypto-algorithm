@@ -2,10 +2,10 @@ name: CI
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
     branches:
-      - main
+      - master
   merge_group:
     types:
       - checks_requested
@@ -37,6 +37,17 @@ jobs:
 
       - name: Run unit tests
         run: yarn test --maxWorkers=2 --coverage
+
+      - name: Upload coverage to Codecov
+        env:
+          COVERAGE_KEY: ${{ secrets.COVERAGE_KEY }}
+        uses: codecov/codecov-action@v2
+          with:
+            files: ./coverage/lcov.info
+            flags: react-native
+            name: code-coverage-report
+            token: ${{ secrets.COVERAGE_KEY }}
+            fail_ci_if_error: true
 
   build-library:
     runs-on: ubuntu-latest
