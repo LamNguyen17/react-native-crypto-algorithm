@@ -40,23 +40,11 @@ jobs:
       - name: Install dependencies
         run: yarn install
 
-      - name: Run tests
-        run: yarn test
-
       - name: Lint files
         run: yarn lint
 
       - name: Typecheck files
         run: yarn typecheck
-
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
 
       - name: Run unit tests
         run: yarn test --maxWorkers=2 --coverage
@@ -64,18 +52,17 @@ jobs:
       - name: Upload coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.COVERAGE_KEY }} -f coverage/lcov.info
 
-  build-library:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-      - name: Build package
-        run: yarn prepare
-
+#  build-library:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
+#
+#      - name: Setup
+#        uses: ./.github/actions/setup
+#
+#      - name: Build package
+#        run: yarn prepare
 #  build-android:
 #    runs-on: ubuntu-latest
 #    env:

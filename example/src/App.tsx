@@ -8,7 +8,7 @@ export default function App() {
   const [hashSHA, setHashSHA256] = useState<string | null>(null);
   const [encryptRSA, setEncryptRSA] = useState<string | null>(null);
   const [decryptRSA, setDecryptRSA] = useState<string | null>(null);
-  const [keyRSA, setKeyRSA] = useState(null);
+  const [keyRSA, setKeyRSA] = useState<any>(null);
   const [keyHmac, setKeyHmac] = useState<string | null>(null);
   const [encryptHmac, setEncryptHmac] = useState<string | null>(null);
   const [decryptHmac, setDecryptHmac] = useState<string | null>(null);
