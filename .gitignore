@@ -87,6 +87,3 @@ example/ios/build
 example/ios/Podfile.lock
 
 .yarn/cache
-coverage/lcov-report
-coverage/clover.xml
-coverage/coverage-final.json
