@@ -190,5 +190,8 @@
     "type": "module-legacy",
     "languages": "kotlin-swift",
     "version": "0.41.2"
+  },
+  "dependencies": {
+    "react-native-crypto-algorithm": "^1.0.2"
   }
 }

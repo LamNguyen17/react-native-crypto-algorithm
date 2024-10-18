@@ -10833,7 +10833,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-native-crypto-algorithm@workspace:., react-native-crypto-algorithm@workspace:^":
+"react-native-crypto-algorithm@^1.0.2, react-native-crypto-algorithm@workspace:., react-native-crypto-algorithm@workspace:^":
   version: 0.0.0-use.local
   resolution: "react-native-crypto-algorithm@workspace:."
   dependencies:
@@ -10853,6 +10853,7 @@ __metadata:
     react: 18.3.1
     react-native: 0.75.4
     react-native-builder-bob: ^0.30.2
+    react-native-crypto-algorithm: ^1.0.2
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.2.2
