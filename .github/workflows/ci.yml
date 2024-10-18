@@ -27,6 +27,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: setup
     steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Setup
+        uses: ./.github/actions/setup
+
       - name: Upload Coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.COVERAGE_KEY }} -f coverage/lcov.info
 
