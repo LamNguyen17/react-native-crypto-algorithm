@@ -40,9 +40,9 @@ jobs:
 #      - name: Install dependencies
 #        run: yarn install
 
-      - name: Clear Jest cache
-        run: jest --clearCache
-        
+      - name: Run Jest with yarn dlx
+        run: yarn dlx jest --coverage --maxWorkers=2
+
       - name: Lint files
         run: yarn lint
 
