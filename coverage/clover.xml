@@ -1,6 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1729222465926" clover="3.2.0">
-  <project timestamp="1729222465926" name="All files">
-    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
+<coverage generated="1729236010687" clover="3.2.0">
+  <project timestamp="1729236010687" name="All files">
+    <metrics statements="21" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="0" elements="31" coveredelements="0" complexity="0" loc="21" ncloc="21" packages="1" files="2" classes="2"/>
+    <file name="CryptoAlgorithm.d.ts" path="/Users/lamnt/Desktop/react-native-crypto-algorithm/src/CryptoAlgorithm.d.ts">
+      <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+    </file>
+    <file name="index.tsx" path="/Users/lamnt/Desktop/react-native-crypto-algorithm/src/index.tsx">
+      <metrics statements="21" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="10" coveredmethods="0"/>
+      <line num="3" count="0" type="stmt"/>
+      <line num="6" count="0" type="stmt"/>
+      <line num="7" count="0" type="stmt"/>
+      <line num="10" count="0" type="stmt"/>
+      <line num="11" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="18" count="0" type="stmt"/>
+      <line num="19" count="0" type="stmt"/>
+      <line num="22" count="0" type="stmt"/>
+      <line num="23" count="0" type="stmt"/>
+      <line num="26" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="30" count="0" type="stmt"/>
+      <line num="31" count="0" type="stmt"/>
+      <line num="34" count="0" type="stmt"/>
+      <line num="35" count="0" type="stmt"/>
+      <line num="38" count="0" type="stmt"/>
+      <line num="39" count="0" type="stmt"/>
+      <line num="42" count="0" type="stmt"/>
+      <line num="43" count="0" type="stmt"/>
+    </file>
   </project>
 </coverage>
