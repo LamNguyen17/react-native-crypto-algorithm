@@ -19,7 +19,7 @@ jobs:
 
       - name: Setup
         uses: ./.github/actions/setup
-#
+
 #      - name: Set up Node.js
 #        uses: actions/setup-node@v3
 #        with:
@@ -39,7 +39,10 @@ jobs:
 #
 #      - name: Install dependencies
 #        run: yarn install
-#
+
+      - name: Clear Jest cache
+        run: jest --clearCache
+        
       - name: Lint files
         run: yarn lint
 
