@@ -76,7 +76,6 @@
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^29.5.5",
     "@types/react": "^18.2.44",
-    "codecov": "^3.8.3",
     "commitlint": "^17.0.2",
     "del-cli": "^5.1.0",
     "eslint": "^8.51.0",
@@ -89,7 +88,7 @@
     "react-native-builder-bob": "^0.30.2",
     "release-it": "^15.0.0",
     "turbo": "^1.10.7",
-    "typescript": "5.1.6"
+    "typescript": "^5.2.2"
   },
   "resolutions": {
     "@types/react": "^18.2.44"
@@ -110,11 +109,20 @@
     ],
     "collectCoverage": true,
     "coverageDirectory": "coverage",
-    "coverageReporters": ["json", "lcov", "text", "clover"],
+    "coverageReporters": [
+      "json",
+      "lcov",
+      "text",
+      "clover"
+    ],
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts,tsx}",
       "!**/node_modules/**",
-      "!**/vendor/**"
+      "!**/coverage/**",
+      "!src/index.tsx",
+      "!src/*.d.ts",
+      "!src/**/*/*.test.{js,jsx,ts,tsx}",
+      "!src/**/types.ts"
     ]
   },
   "commitlint": {
