@@ -1,45 +1,45 @@
 import { NativeModules } from 'react-native';
 
-const CryptoAlgorithmNative = NativeModules.CryptoAlgorithm;
+const { CryptoAlgorithm } = NativeModules;
 
 export default class Crypto {
   static hashSHA256 = (value: string) => {
-    return CryptoAlgorithmNative.hashSHA256(value);
+    return CryptoAlgorithm.hashSHA256(value);
   };
 
   static encryptAES = (value: string, secretKey: string, ivKey?: string) => {
-    return CryptoAlgorithmNative.encryptAES(value, secretKey, ivKey);
+    return CryptoAlgorithm.encryptAES(value, secretKey, ivKey);
   };
 
   static decryptAES = (value: string, secretKey: string, ivKey?: string) => {
-    return CryptoAlgorithmNative.decryptAES(value, secretKey, ivKey);
+    return CryptoAlgorithm.decryptAES(value, secretKey, ivKey);
   };
 
   static genRSAKeyPair = () => {
-    return CryptoAlgorithmNative.genRSAKeyPair();
+    return CryptoAlgorithm.genRSAKeyPair();
   };
 
   static encryptRSA = (value: string, publicKey: string) => {
-    return CryptoAlgorithmNative.encryptRSA(value, publicKey);
+    return CryptoAlgorithm.encryptRSA(value, publicKey);
   };
 
   static decryptRSA = (value: any, privateKey: string) => {
-    return CryptoAlgorithmNative.decryptRSA(value, privateKey);
+    return CryptoAlgorithm.decryptRSA(value, privateKey);
   };
 
   static genHmacSecretKey = () => {
-    return CryptoAlgorithmNative.genSecretKey('Hmac');
+    return CryptoAlgorithm.genSecretKey('Hmac');
   };
 
   static encryptHmacAes = (value: string, privateKey: string)=> {
-    return CryptoAlgorithmNative.encryptHmacAes(value, privateKey);
+    return CryptoAlgorithm.encryptHmacAes(value, privateKey);
   };
 
   static decryptHmacAes = (value: any, privateKey: string) => {
-    return CryptoAlgorithmNative.decryptHmacAes(value, privateKey);
+    return CryptoAlgorithm.decryptHmacAes(value, privateKey);
   };
 
   static verifyHmac = (value: string, privateKey: string) => {
-    return CryptoAlgorithmNative.verifyHmac(value, privateKey);
+    return CryptoAlgorithm.verifyHmac(value, privateKey);
   };
 }
