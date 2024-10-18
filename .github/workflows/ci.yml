@@ -19,27 +19,27 @@ jobs:
 
 #      - name: Setup
 #        uses: ./.github/actions/setup
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version-file: .nvmrc
-
-      - name: Install Yarn
-        run: |
-          curl -o- -L https://yarnpkg.com/install.sh | bash
-          export PATH="$HOME/.yarn/bin:$PATH"
-
-      - name: Check for yarn.lock
-        run: |
-          if [ ! -f yarn.lock ]; then
-            echo "yarn.lock file is missing. Please run 'yarn install' to generate one."
-            exit 1
-          fi
-
-      - name: Install dependencies
-        run: yarn install
-
+#
+#      - name: Set up Node.js
+#        uses: actions/setup-node@v3
+#        with:
+#          node-version-file: .nvmrc
+#
+#      - name: Install Yarn
+#        run: |
+#          curl -o- -L https://yarnpkg.com/install.sh | bash
+##          export PATH="$HOME/.yarn/bin:$PATH"
+#
+#      - name: Check for yarn.lock
+#        run: |
+#          if [ ! -f yarn.lock ]; then
+#            echo "yarn.lock file is missing. Please run 'yarn install' to generate one."
+#            exit 1
+#          fi
+#
+#      - name: Install dependencies
+#        run: yarn install
+#
       - name: Lint files
         run: yarn lint
 
