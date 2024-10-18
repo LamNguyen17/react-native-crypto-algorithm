@@ -20,20 +20,12 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
 
-  test:
-    runs-on: ubuntu-latest
-#    needs: [lint, typecheck]
-    needs: setup
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v3
-
       - name: Run Tests
         run: yarn test --maxWorkers=2 --coverage
 
   upload-coverage:
     runs-on: ubuntu-latest
-    needs: test
+    needs: setup
     steps:
       - name: Upload Coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.COVERAGE_KEY }} -f coverage/lcov.info
