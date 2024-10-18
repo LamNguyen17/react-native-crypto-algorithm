@@ -1,19 +1,21 @@
 import Crypto from 'react-native-crypto-algorithm';
 
-jest.mock('react-native-crypto-algorithm', () => ({
-  hashSHA256: jest.fn(),
-  encryptAES: jest.fn(),
-  decryptAES: jest.fn(),
-  genRSAKeyPair: jest.fn(),
-  encryptRSA: jest.fn(),
-  decryptRSA: jest.fn(),
-  genHmacSecretKey: jest.fn(),
-  encryptHmacAes: jest.fn(),
-  decryptHmacAes: jest.fn(),
-  verifyHmac: jest.fn(),
-}));
-
 describe('Crypto', () => {
+  beforeEach(() => {
+    jest.mock('react-native-crypto-algorithm', () => ({
+      hashSHA256: jest.fn(),
+      encryptAES: jest.fn(),
+      decryptAES: jest.fn(),
+      genRSAKeyPair: jest.fn(),
+      encryptRSA: jest.fn(),
+      decryptRSA: jest.fn(),
+      genHmacSecretKey: jest.fn(),
+      encryptHmacAes: jest.fn(),
+      decryptHmacAes: jest.fn(),
+      verifyHmac: jest.fn(),
+    }));
+  })
+  
   it('should hash value using SHA256', async () => {
     const mockValue = 'Hello123';
     const mockHash = '134563d4e440f0e418b0f382f23a2cf301af6d7f648ccfae9895018345d779a3';

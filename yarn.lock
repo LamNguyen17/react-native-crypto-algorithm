@@ -10833,7 +10833,17 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"react-native-crypto-algorithm@^1.0.2, react-native-crypto-algorithm@workspace:., react-native-crypto-algorithm@workspace:^":
+"react-native-crypto-algorithm@npm:1.0.2":
+  version: 1.0.2
+  resolution: "react-native-crypto-algorithm@npm:1.0.2"
+  peerDependencies:
+    react: "*"
+    react-native: "*"
+  checksum: 35cc06cc95b53d6520980041a875df5866883186ac8a1a152694ec027f7d2bcce85e1a6bdab8f26011b594cb75c928d65c2f75cdc06581e95f101316f226a4f4
+  languageName: node
+  linkType: hard
+
+"react-native-crypto-algorithm@workspace:., react-native-crypto-algorithm@workspace:^":
   version: 0.0.0-use.local
   resolution: "react-native-crypto-algorithm@workspace:."
   dependencies:
@@ -10853,7 +10863,7 @@ __metadata:
     react: 18.3.1
     react-native: 0.75.4
     react-native-builder-bob: ^0.30.2
-    react-native-crypto-algorithm: ^1.0.2
+    react-native-crypto-algorithm: 1.0.2
     release-it: ^15.0.0
     turbo: ^1.10.7
     typescript: ^5.2.2
