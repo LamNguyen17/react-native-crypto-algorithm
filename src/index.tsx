@@ -1,45 +1,57 @@
 import { NativeModules } from 'react-native';
+import { CryptoAlgorithm } from './CryptoAlgorithm';
 
-const { CryptoAlgorithm } = NativeModules;
+const { CryptoAlgorithm: NativeCryptoAlgorithm } = NativeModules;
 
-export default class Crypto {
-  static hashSHA256 = (value: string) => {
-    return CryptoAlgorithm.hashSHA256(value);
-  };
 
-  static encryptAES = (value: string, secretKey: string, ivKey?: string) => {
-    return CryptoAlgorithm.encryptAES(value, secretKey, ivKey);
-  };
+export default class Crypto implements CryptoAlgorithm{
+  // Instance method to hash SHA256
+  hashSHA256(value: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.hashSHA256(value);
+  }
 
-  static decryptAES = (value: string, secretKey: string, ivKey?: string) => {
-    return CryptoAlgorithm.decryptAES(value, secretKey, ivKey);
-  };
+  // Instance method to encrypt using AES
+  encryptAES(value: string, secretKey: string, ivKey?: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.encryptAES(value, secretKey, ivKey);
+  }
 
-  static genRSAKeyPair = () => {
-    return CryptoAlgorithm.genRSAKeyPair();
-  };
+  // Instance method to decrypt using AES
+  decryptAES(value: string, secretKey: string, ivKey?: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.decryptAES(value, secretKey, ivKey);
+  }
 
-  static encryptRSA = (value: string, publicKey: string) => {
-    return CryptoAlgorithm.encryptRSA(value, publicKey);
-  };
+  // Instance method to generate RSA key pair
+  genRSAKeyPair(): Promise<any> {
+    return NativeCryptoAlgorithm.genRSAKeyPair();
+  }
 
-  static decryptRSA = (value: any, privateKey: string) => {
-    return CryptoAlgorithm.decryptRSA(value, privateKey);
-  };
+  // Instance method to encrypt using RSA
+  encryptRSA(value: string, publicKey: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.encryptRSA(value, publicKey);
+  }
 
-  static genHmacSecretKey = () => {
-    return CryptoAlgorithm.genSecretKey('Hmac');
-  };
+  // Instance method to decrypt using RSA
+  decryptRSA(value: any, privateKey: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.decryptRSA(value, privateKey);
+  }
 
-  static encryptHmacAes = (value: string, privateKey: string) => {
-    return CryptoAlgorithm.encryptHmacAes(value, privateKey);
-  };
+  // Instance method to generate HMAC secret key
+  genHmacSecretKey(): Promise<null> {
+    return NativeCryptoAlgorithm.genSecretKey('Hmac');
+  }
 
-  static decryptHmacAes = (value: any, privateKey: string) => {
-    return CryptoAlgorithm.decryptHmacAes(value, privateKey);
-  };
+  // Instance method to encrypt using HMAC AES
+  encryptHmacAes(value: string, privateKey: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.encryptHmacAes(value, privateKey);
+  }
 
-  static verifyHmac = (value: string, privateKey: string) => {
-    return CryptoAlgorithm.verifyHmac(value, privateKey);
-  };
+  // Instance method to decrypt using HMAC AES
+  decryptHmacAes(value: any, privateKey: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.decryptHmacAes(value, privateKey);
+  }
+
+  // Instance method to verify HMAC
+  verifyHmac(value: string, privateKey: string): Promise<string | null> {
+    return NativeCryptoAlgorithm.verifyHmac(value, privateKey);
+  }
 }
