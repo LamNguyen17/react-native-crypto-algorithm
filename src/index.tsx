@@ -31,7 +31,7 @@ export default class Crypto {
     return CryptoAlgorithm.genSecretKey('Hmac');
   };
 
-  static encryptHmacAes = (value: string, privateKey: string)=> {
+  static encryptHmacAes = (value: string, privateKey: string) => {
     return CryptoAlgorithm.encryptHmacAes(value, privateKey);
   };
 
