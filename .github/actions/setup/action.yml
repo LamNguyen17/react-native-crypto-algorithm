@@ -37,5 +37,9 @@ runs:
 #      shell: bash
 
     - name: Install dependencies
-      run: yarn install --frozen-lockfile
+      run: yarn install
+      shell: bash
+
+    - name: Clear Jest cache
+      run: jest --clearCache
       shell: bash
