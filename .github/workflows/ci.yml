@@ -38,46 +38,46 @@ jobs:
       - name: Upload Coverage to Codecov
         run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.COVERAGE_KEY }} -f coverage/lcov.info
 
-  lint1:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-
-      - name: Setup
-        uses: ./.github/actions/setup
-
-#      - name: Set up Node.js
-#        uses: actions/setup-node@v3
-#        with:
-#          node-version-file: .nvmrc
+#  lint1:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: Checkout
+#        uses: actions/checkout@v3
 #
-#      - name: Install Yarn
-#        run: |
-#          curl -o- -L https://yarnpkg.com/install.sh | bash
-##          export PATH="$HOME/.yarn/bin:$PATH"
+#      - name: Setup
+#        uses: ./.github/actions/setup
 #
-#      - name: Check for yarn.lock
-#        run: |
-#          if [ ! -f yarn.lock ]; then
-#            echo "yarn.lock file is missing. Please run 'yarn install' to generate one."
-#            exit 1
-#          fi
+##      - name: Set up Node.js
+##        uses: actions/setup-node@v3
+##        with:
+##          node-version-file: .nvmrc
+##
+##      - name: Install Yarn
+##        run: |
+##          curl -o- -L https://yarnpkg.com/install.sh | bash
+###          export PATH="$HOME/.yarn/bin:$PATH"
+##
+##      - name: Check for yarn.lock
+##        run: |
+##          if [ ! -f yarn.lock ]; then
+##            echo "yarn.lock file is missing. Please run 'yarn install' to generate one."
+##            exit 1
+##          fi
+##
+##      - name: Install dependencies
+##        run: yarn install
 #
-#      - name: Install dependencies
-#        run: yarn install
-
-      - name: Lint files
-        run: yarn lint
-
-      - name: Typecheck files
-        run: yarn typecheck
-
-      - name: Run unit tests
-        run: yarn test --maxWorkers=2 --coverage
-
-      - name: Upload coverage to Codecov
-        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.COVERAGE_KEY }} -f coverage/lcov.info
+#      - name: Lint files
+#        run: yarn lint
+#
+#      - name: Typecheck files
+#        run: yarn typecheck
+#
+#      - name: Run unit tests
+#        run: yarn test --maxWorkers=2 --coverage
+#
+#      - name: Upload coverage to Codecov
+#        run: bash <(curl -s https://codecov.io/bash) -t ${{ secrets.COVERAGE_KEY }} -f coverage/lcov.info
 
 #  build-library:
 #    runs-on: ubuntu-latest
