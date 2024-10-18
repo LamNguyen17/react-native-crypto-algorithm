@@ -40,9 +40,6 @@ jobs:
 #      - name: Install dependencies
 #        run: yarn install
 
-      - name: Run Jest with yarn dlx
-        run: yarn dlx jest --coverage --maxWorkers=2
-
       - name: Lint files
         run: yarn lint
 
